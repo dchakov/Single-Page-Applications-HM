@@ -75,10 +75,11 @@
         }
     };
 
+    angular.module('tictactoeApp.directives', []);
     angular.module('tictactoeApp.services', []);
     angular.module('tictactoeApp.controllers', ['tictactoeApp.services']);
 
-    angular.module('tictactoeApp', ['ngRoute', 'ngCookies', 'tictactoeApp.controllers'])
+    angular.module('tictactoeApp', ['ngRoute', 'ngCookies', 'tictactoeApp.controllers', 'tictactoeApp.directives'])
     .config(['$routeProvider', '$locationProvider', config])
     .run(['$http', '$cookies', '$rootScope', '$location', 'auth', run])
     .constant('baseUrl', 'http://localhost:33257/')

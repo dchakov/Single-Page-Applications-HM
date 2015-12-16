@@ -100,7 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="partials\games\newGame.html" />
+    <Content Include="partials\games\listed-players-directive.html" />
     <Content Include="partials\games\playGame.html" />
     <Content Include="partials\games\scores.html" />
     <Content Include="partials\games\winPlayer.html" />
@@ -130,6 +130,7 @@
     <Content Include="scripts\app\games\create-game-controller.js" />
     <Content Include="scripts\app\games\join-game-controller.js" />
     <Content Include="scripts\app\games\play-game-controller.js" />
+    <Content Include="scripts\app\games\listed-players-directive.js" />
     <Content Include="scripts\app\games\scores-controller.js" />
     <Content Include="scripts\app\games\win-player-controller.js" />
     <Content Include="scripts\app\home\home-controller.js" />

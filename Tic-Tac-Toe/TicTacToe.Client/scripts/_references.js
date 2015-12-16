@@ -8,6 +8,7 @@
 /// <reference path="app/games/create-game-controller.js" />
 /// <reference path="app/games/games-service.js" />
 /// <reference path="app/games/join-game-controller.js" />
+/// <reference path="app/games/listed-players-directive.js" />
 /// <reference path="app/games/play-game-controller.js" />
 /// <reference path="app/games/scores-controller.js" />
 /// <reference path="app/games/win-player-controller.js" />
