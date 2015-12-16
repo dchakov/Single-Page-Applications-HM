@@ -32,10 +32,13 @@
                         <a href="/">Home</a>
                     </li>
                     <li ng-if="vm.globballySetCurrenUser">
-                        <a href="/games/create">Create Game</a>
+                        <a href="/api/games/create">Create Game</a>
                     </li>
                     <li ng-if="vm.globballySetCurrenUser">
-                        <a href="/games/join">Join Game</a>
+                        <a href="/api/games/join">Join Game</a>
+                    </li>
+                    <li ng-if="vm.globballySetCurrenUser">
+                        <a href="/api/games/scores">Scores</a>
                     </li>
                 </ul>
 
@@ -80,14 +83,24 @@
     </footer>
 
     <script src="scripts/app/app.js"></script>
+
     <script src="scripts/app/common/main-controller.js"></script>
+    <script src="scripts/app/common/data-service.js"></script>
+
+    <script src="scripts/app/home/home-controller.js"></script>
+
     <script src="scripts/app/identity/register-controller.js"></script>
     <script src="scripts/app/identity/login-controller.js"></script>
-    <script src="scripts/app/home/home-controller.js"></script>
     <script src="scripts/app/identity/auth-service.js"></script>
     <script src="scripts/app/identity/identity-service.js"></script>
+
     <script src="scripts/app/games/create-game-controller.js"></script>
     <script src="scripts/app/games/games-service.js"></script>
+    <script src="scripts/app/games/play-game-controller.js"></script>
+    <script src="scripts/app/games/join-game-controller.js"></script>
+    <script src="scripts/app/games/win-player-controller.js"></script>
+    <script src="scripts/app/games/scores-controller.js"></script>
 
+    <script src="scripts/app/filters/game-state-filter.js"></script>
 </body>
 </html>

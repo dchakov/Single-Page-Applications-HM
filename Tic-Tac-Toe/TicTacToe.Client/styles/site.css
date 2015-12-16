@@ -9,3 +9,13 @@
 .image-container img {
     width: 100%;
 }
+
+#playGameTable td{
+    padding: 10px 40px;
+    margin: 10px 40px;
+    font-size: 50px;
+}
+
+#playGameTable td:hover{
+    background-color: lawngreen;
+}

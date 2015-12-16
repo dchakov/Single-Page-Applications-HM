@@ -103,6 +103,28 @@
             return Ok(gameInfo);
         }
 
+        [HttpGet]
+        public IHttpActionResult Scores()
+        {
+            var users = this.data.Users.All()
+                .Select(u => new GameResultDataModel()
+                {
+                    Id = u.Id,
+                    UserName = u.UserName,
+                    Score = 0
+                })
+                .ToArray();
+
+            foreach (var item in users)
+            {
+                item.Score = this.data.Games.All()
+                    .Where(g => (g.FirstPlayerId == item.Id && g.State == (GameState)3)||
+                                (g.SecondPlayerId == item.Id && g.State == (GameState)4))
+                    .Count();
+
+            }
+            return Ok(users);
+        }
         /// <param name="row">1,2 or 3</param>
         /// <param name="col">1,2 or 3</param>
         [HttpPost]

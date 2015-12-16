@@ -1,0 +1,6 @@
+﻿<div>
+    <h4>Results</h4>
+    <ol>
+        <li ng-repeat="user in vm.gameScores | orderBy:user.Score">{{user.UserName}} - {{user.Score}}</li>
+    </ol>
+</div>

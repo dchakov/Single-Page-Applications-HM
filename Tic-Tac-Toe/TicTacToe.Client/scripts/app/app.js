@@ -34,12 +34,31 @@
             controller: 'LoginController',
             controllerAs: CONTROLLER_VIEW_MODEL
         })
-        .when('/games/create', {
-            templateUrl: 'partials/games/newGame.html',
+        .when('/api/games/create', {
+            templateUrl: 'partials/games/playGame.html',
             controller: 'CreateGameController',
             controllerAs: CONTROLLER_VIEW_MODEL
         })
-
+        .when('/api/games/join', {
+            templateUrl: 'partials/games/playGame.html',
+            controller: 'JoinGameController',
+            controllerAs: CONTROLLER_VIEW_MODEL
+        })
+        .when('/api/games/play/:data', {
+            templateUrl: 'partials/games/playGame.html',
+            controller: 'PlayGameController',
+            controllerAs: CONTROLLER_VIEW_MODEL
+        })
+        .when('/api/games/winPlayer/:id', {
+            templateUrl: 'partials/games/winPlayer.html',
+            controller: 'WinPlayerController',
+            controllerAs: CONTROLLER_VIEW_MODEL
+        })
+        .when('/api/games/scores', {
+            templateUrl: 'partials/games/scores.html',
+            controller: 'ScoresController',
+            controllerAs: CONTROLLER_VIEW_MODEL
+        })
         .otherwise({ redirectTo: '/' });
     }
 
@@ -62,6 +81,6 @@
     angular.module('tictactoeApp', ['ngRoute', 'ngCookies', 'tictactoeApp.controllers'])
     .config(['$routeProvider', '$locationProvider', config])
     .run(['$http', '$cookies', '$rootScope', '$location', 'auth', run])
-    .constant('baseUrl', 'http://localhost:33257/');
-
+    .constant('baseUrl', 'http://localhost:33257/')
+    .constant('errorHandler', function (error) { console.log(error); });
 }());

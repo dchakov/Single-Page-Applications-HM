@@ -101,6 +101,9 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="partials\games\newGame.html" />
+    <Content Include="partials\games\playGame.html" />
+    <Content Include="partials\games\scores.html" />
+    <Content Include="partials\games\winPlayer.html" />
     <Content Include="scripts\angular.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -120,9 +123,15 @@
     <Content Include="scripts\angular.min.js" />
     <None Include="scripts\_references.js" />
     <Content Include="scripts\app\app.js" />
+    <Content Include="scripts\app\common\data-service.js" />
     <Content Include="scripts\app\common\main-controller.js" />
+    <Content Include="scripts\app\filters\game-state-filter.js" />
     <Content Include="scripts\app\games\games-service.js" />
     <Content Include="scripts\app\games\create-game-controller.js" />
+    <Content Include="scripts\app\games\join-game-controller.js" />
+    <Content Include="scripts\app\games\play-game-controller.js" />
+    <Content Include="scripts\app\games\scores-controller.js" />
+    <Content Include="scripts\app\games\win-player-controller.js" />
     <Content Include="scripts\app\home\home-controller.js" />
     <Content Include="scripts\app\identity\auth-service.js" />
     <Content Include="scripts\app\identity\identity-service.js" />

@@ -1,68 +1,37 @@
 ﻿(function () {
     'use strict';
 
-    function gameService($http, $q, baseUrl) {
+    function gameService(data) {
 
         function createGame() {
-            var deferred = $q.defer();
-
-            $http.post(baseUrl + 'games/create')
-                .then(function (response) {
-                    deferred.resolve(response);
-                }, function (err) {
-                    deferred.reject(err);
-                });
-
-            return deferred.promise;
+            return data.post('api/games/create', undefined);
         }
 
         function joinGame() {
-            var deferred = $q.defer();
-
-            $http.post(baseUrl + 'games/join')
-                .then(function (response) {
-                    deferred.resolve(response);
-                }, function (err) {
-                    deferred.reject(err);
-                });
-
-            return deferred.promise;
+            return data.post('api/games/join', undefined);
         }
 
         function gameStatus(id) {
-            var deferred = $q.defer();
-
-            $http.get(baseUrl + 'games/status/' + id)
-                .then(function (response) {
-                    deferred.resolve(response);
-                }, function (err) {
-                    deferred.reject(err);
-                });
-
-            return deferred.promise;
+            return data.get('api/games/status/?gameId=', id);
         }
 
-        function playGame(data) {
-            var deferred = $q.defer();
+        function playGame(params) {
+            return data.post('api/games/play', params);
+        }
 
-            $http.post(baseUrl + 'games/play')
-                .then(function (response) {
-                    deferred.resolve(response);
-                }, function (err) {
-                    deferred.reject(err);
-                });
-
-            return deferred.promise;
+        function gameScores() {
+            return data.get('api/games/scores', '');
         }
 
         return {
             create: createGame,
             join: joinGame,
             status: gameStatus,
-            play: playGame
+            play: playGame,
+            scores: gameScores
         }
     }
 
     angular.module('tictactoeApp.services')
-        .factory('game', ['$http', '$q', 'baseUrl', gameService]);
+        .factory('game', ['data', gameService]);
 }());
