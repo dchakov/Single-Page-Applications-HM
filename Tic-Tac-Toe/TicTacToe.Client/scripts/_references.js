@@ -6,6 +6,7 @@
 /// <reference path="app/common/main-controller.js" />
 /// <reference path="app/filters/game-state-filter.js" />
 /// <reference path="app/games/create-game-controller.js" />
+/// <reference path="app/games/datepicker-directive.js" />
 /// <reference path="app/games/games-service.js" />
 /// <reference path="app/games/join-game-controller.js" />
 /// <reference path="app/games/listed-players-directive.js" />

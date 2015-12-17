@@ -126,6 +126,7 @@
     <Content Include="scripts\app\common\data-service.js" />
     <Content Include="scripts\app\common\main-controller.js" />
     <Content Include="scripts\app\filters\game-state-filter.js" />
+    <Content Include="scripts\app\games\datepicker-directive.js" />
     <Content Include="scripts\app\games\games-service.js" />
     <Content Include="scripts\app\games\create-game-controller.js" />
     <Content Include="scripts\app\games\join-game-controller.js" />
