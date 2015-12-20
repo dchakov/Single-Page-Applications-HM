@@ -33,6 +33,9 @@
                     <li ng-if="vm.globballySetCurrenUser">
                         <a href="/cats/add">Add Cat</a>
                     </li>
+                    <li>
+                        <a href="/cats">All cats</a>
+                    </li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right" ng-if="!vm.globballySetCurrenUser">
@@ -77,13 +80,20 @@
     </footer>
     
     <script src="scripts/app/app.js"></script>
+
     <script src="scripts/app/common/main-controller.js"></script>
+    <script src="scripts/app/common/data-service.js"></script>
+
+    <script src="scripts/app/home/home-controller.js"></script>
+
     <script src="scripts/app/identity/register-controller.js"></script>
     <script src="scripts/app/identity/login-controller.js"></script>
-    <script src="scripts/app/home/home-controller.js"></script>
     <script src="scripts/app/identity/auth-service.js"></script>
     <script src="scripts/app/identity/identity-service.js"></script>
+
     <script src="scripts/app/cats/add-cat-controller.js"></script>
     <script src="scripts/app/cats/cats-service.js"></script>
+    <script src="scripts/app/cats/search-cats-controller.js"></script>
+    <script src="scripts/app/cats/listed-cats-directive.js"></script>
 </body>
 </html>

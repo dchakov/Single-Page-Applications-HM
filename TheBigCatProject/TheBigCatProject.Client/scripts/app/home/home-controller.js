@@ -1,12 +1,15 @@
 ﻿(function () {
     'use strict';
 
-    function HomeController() {
+    function HomeController(cats) {
         var vm = this;
 
-        vm.hi = 'HI';
+        cats.searchCats({ page: 1 })
+            .then(function (initialCats) {
+                vm.cats = initialCats;
+            });
     }
 
     angular.module('catApp.controllers')
-        .controller('HomeController', [HomeController]);
+        .controller('HomeController', ['cats', HomeController]);
 }());

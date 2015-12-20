@@ -40,6 +40,11 @@
             controllerAs: CONTROLLER_VIEW_MODEL,
             resolve: routeResolvers.authenticationRequired
         })
+        .when('/cats', {
+            templateUrl: 'partials/cats/search-cats.html',
+            controller: 'SearchCatsController',
+            controllerAs: CONTROLLER_VIEW_MODEL
+        })
         .otherwise({ redirectTo: '/' });
     }
 
@@ -57,10 +62,11 @@
         }
     };
 
+    angular.module('catApp.directives', []);
     angular.module('catApp.services', []);
     angular.module('catApp.controllers', ['catApp.services']);
 
-    angular.module('catApp', ['ngRoute', 'ngCookies', 'catApp.controllers'])
+    angular.module('catApp', ['ngRoute', 'ngCookies', 'catApp.controllers', 'catApp.directives'])
     .config(['$routeProvider', '$locationProvider', config])
     .run(['$http', '$cookies', '$rootScope', '$location', 'auth', run])
     .constant('baseUrl', 'http://localhost:51600/');

@@ -3,7 +3,6 @@
         <form class="form-horizontal" name="catForm">
             <fieldset>
                 <legend>Add Your Cat</legend>
-
                 <div class="text-center error" ng-show="catForm.$invalid && catForm.$dirty">Form is not valid!</div>
                 <div class="form-group">
                     <label for="name" class="col-lg-2 control-label">Name</label>
@@ -43,6 +42,6 @@
         </form>
     </div>
     <div class="col-md-6 image-container">
-        <img ng-src="{{cat.url}}"/>
+        <img ng-src="{{cat.url}}" />
     </div>
 </div>

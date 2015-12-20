@@ -68,6 +68,8 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="partials\cats\add-cat.html" />
+    <Content Include="partials\cats\listed-cats-directive.html" />
+    <Content Include="partials\cats\search-cats.html" />
     <Content Include="scripts\app\cats\add-cat-controller.js" />
     <Content Include="partials\identity\login.html" />
     <Content Include="scripts\angular.min.js.map" />
@@ -89,6 +91,9 @@
     <Content Include="scripts\angular.min.js" />
     <None Include="scripts\_references.js" />
     <Content Include="scripts\app\cats\cats-service.js" />
+    <Content Include="scripts\app\cats\listed-cats-directive.js" />
+    <Content Include="scripts\app\cats\search-cats-controller.js" />
+    <Content Include="scripts\app\common\data-service.js" />
     <Content Include="scripts\app\common\main-controller.js" />
     <Content Include="scripts\app\home\home-controller.js" />
     <Content Include="scripts\app\identity\auth-service.js" />
