@@ -1,0 +1,53 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <h2>{{vm.driver.name}}</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <p>Upcoming trips:<strong>{{vm.driver.numberOfUpcomingTrips}}</strong></p>
+    </div>
+    <div class="col-md-3">
+        <p>Total trips:<strong>{{vm.driver.numberOfTotalTrips}}</strong></p>
+    </div>
+    <div class="col-md-3 checkboxes">
+        <label for="onlyMine" class="control-label">
+            <input id="onlyMine" type="checkbox" ng-model="onlyMineFilter" />Only mine trips
+        </label>
+
+        <label for="onlyDriver" class="control-label">
+            <input id="onlyDriver" type="checkbox" ng-model="onlyDriverFilter" />Only driver trips
+        </label>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <div class="text-center">
+                <label for="sort" class="control-label">Sort</label>
+            </div>
+            <div>
+                <select class="form-control" ng-model="orderByParam" ng-init="orderByParam='none'" id="sort">
+                    <option value="none">None</option>
+                    <option value="from">From</option>
+                    <option value="to">To</option>
+                    <option value="departureDate">Departure time</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<table class="table table-bordered">
+    <tr>
+        <th class="text-center">Driver</th>
+        <th class="text-center">From</th>
+        <th class="text-center">To</th>
+        <th class="text-center">Departure Time</th>
+    </tr>
+    <tr ng-repeat="driver in vm.driver.trips | driverTripsFilter:onlyMineFilter:onlyDriverFilter:vm.driver.name | orderBy:orderByParam">
+        <td class="text-center">
+            <a href="#/driver/{{driver.driverId}}">{{driver.driverName}}</a>
+        </td>
+        <td class="text-center">{{driver.from}}</td>
+        <td class="text-center">{{driver.to}}</td>
+        <td class="text-center"><a href="#/">{{driver.departureDate | beautifulDate}}</a></td>
+    </tr>
+</table>

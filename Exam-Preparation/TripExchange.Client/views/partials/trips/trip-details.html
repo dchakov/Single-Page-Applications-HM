@@ -1,0 +1,26 @@
+﻿<div class="container">
+    <div class="row text-center">
+        <div class="col-md-7">
+            <h3>{{vm.trips.driverName}} - {{vm.trips.departureDate | beautifulDate}}</h3>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-sm btn-default" ng-click="vm.joinTrip()">Join Trip</button>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-3">
+            <p>From:<strong>{{vm.trips.from}}</strong></p>
+        </div>
+        <div class="col-md-3">
+            <p>To:<strong>{{vm.trips.to}}</strong></p>
+        </div>
+        <div class="col-md-3">
+            <p>Number of free seats:<strong>{{vm.trips.numberOfFreeSeats}}</strong></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9 text-center">
+            <p>Passengers: <b ng-repeat="passenger in vm.trips.passengers">{{passenger}}{{$last ? '' : ', '}}</b></p>
+        </div>
+    </div>
+</div>
